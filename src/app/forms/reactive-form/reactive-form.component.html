@@ -1,0 +1,131 @@
+<mat-card>
+  <mat-toolbar color="primary">Reactive Form Or Model Driven Form</mat-toolbar>
+  <br><br>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-select
+      placeholder="select"
+      formControlName="title"
+      [ngClass]="{'is-invalid':submitted && f.title.errors}">
+        <mat-option value=""></mat-option>
+        <mat-option value="Ms">Ms</mat-option>
+        <mat-option value="Mr">Mr</mat-option>
+        <mat-option value="Mrs">Mrs</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-error *ngIf="submitted && f.title.errors">
+      <mat-error *ngIf="f.title.errors?.required">
+        Title is required
+      </mat-error>
+
+    </mat-error>
+
+
+    <br><br>
+
+    <mat-form-field>
+      <input type="text" matInput placeholder="Name"
+      formControlName="name"
+      [ngClass]="{'is-invalid':submitted && f.name.errors}">
+    </mat-form-field>
+    <mat-error *ngIf="submitted && f.name.errors">
+      <mat-error *ngIf="f.name.errors?.required">
+        Name is required
+      </mat-error>
+    </mat-error>
+
+
+
+
+    <br><br>
+
+    <mat-form-field>
+      <input type="email" matInput placeholder="Email"
+      formControlName="email"
+      [ngClass]="{'is-invalid':submitted && f.email.errors}">
+    </mat-form-field>
+    <mat-error *ngIf="submitted && f.email.errors">
+      <mat-error *ngIf="f.email.errors?.required">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="f.email.errors?.email">
+        Should in email format
+      </mat-error>
+    </mat-error>
+
+    <br><br>
+
+    <mat-form-field>
+
+      <input type="date" matInput placeholder="Date of Birth"
+      formControlName="dob"
+      [ngClass]="{'is-invalid':submitted && f.dob.errors}">
+    </mat-form-field>
+    <mat-error *ngIf="submitted && f.dob.errors">
+      <mat-error *ngIf="f.dob.errors?.required">
+        Date of birth is required
+      </mat-error>
+      <mat-error *ngIf="f.dob.errors?.pattern">
+        Date of birth format is not correct
+      </mat-error>
+
+    </mat-error>
+
+
+    <br><br>
+
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password"
+      formControlName="password"
+      [ngClass]="{'is-invalid':submitted && f.password.errors}">
+    </mat-form-field>
+    <mat-error *ngIf="submitted && f.password.errors">
+      <mat-error *ngIf="f.password.errors?.required">
+        Password is required
+      </mat-error>
+      <mat-error *ngIf="f.password.errors?.minlength">
+        Password length should be greater than 6
+      </mat-error>
+    </mat-error>
+
+
+    <br><br>
+
+    <mat-form-field>
+      <input type="password" matInput placeholder="Confirm password"
+      formControlName="cpassword"
+      [ngClass]="{'is-invalid':submitted && f.cpassword.errors}">
+    </mat-form-field>
+
+    <mat-error *ngIf="submitted && f.cpassword.errors">
+      <mat-error *ngIf="f.cpassword.errors?.required">
+        Confirm password is required
+      </mat-error>
+      <mat-error *ngIf="f.cpassword.errors.mustMatch">
+        password must match
+      </mat-error>
+    </mat-error>
+
+
+
+
+    <br><br>
+
+      <mat-checkbox name="terms"
+      formControlName="terms"
+      [ngClass]="{'is-invalid':submitted && f.terms.errors}">Accept Terms & Conditions </mat-checkbox>
+
+        <mat-error *ngIf="f.terms.errors?.required">
+          Accept the terms and conditions
+        </mat-error>
+
+
+
+
+      <br><br>
+
+      <button type="submit" mat-raised-button color="primary">Register</button>
+      <button type="reset" mat-raised-button color="warn">Reset</button>
+
+  </form>
+</mat-card>
