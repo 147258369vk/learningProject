@@ -8,6 +8,9 @@ import { PostCreateComponent } from './post/post-create/post-create.component';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
+import { ListUserComponent } from './users/list-user/list-user.component';
 
 
 //forms Module
@@ -24,6 +27,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { PostComponent } from './post/post/post.component';
+import {MatTableModule} from '@angular/material/table';
+
+
 
 
 
@@ -36,6 +43,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     PostListComponent,
     TemplateDrivenFormComponent,
     ReactiveFormComponent,
+    AddUserComponent,
+    EditUserComponent,
+    ListUserComponent,
+    PostComponent,
+
 
 
   ],
@@ -52,7 +64,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatCheckboxModule,
     MatFormFieldModule,
     MatToolbarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
 
   ],
   providers: [],

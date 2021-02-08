@@ -1,0 +1,85 @@
+<mat-card>
+  <mat-toolbar>Add User</mat-toolbar>
+  <br><br>
+  <form (ngSubmit)="addNewUser(userform)" #userform="ngForm">
+    <mat-form-field>
+      <input
+      type="text"
+      matInput
+      name="uname"
+      ngModel
+      required
+      placeholder="Enter Your name">
+    </mat-form-field>
+    <br><br>
+
+    <mat-form-field>
+      <input
+      type="text"
+      matInput
+      name="email"
+      ngModel
+      required
+      email
+      placeholder="Enter Your Email">
+    </mat-form-field>
+
+    <br><br>
+
+    <mat-form-field>
+      <input
+      type="text"
+      matInput
+      name="contact"
+      ngModel
+      required
+      pattern="[0-9]{0,10}"
+      placeholder="Enter your contact Details">
+    </mat-form-field>
+
+    <br><br>
+
+    <mat-form-field>
+      <input
+      type="text"
+      matInput
+      name="designation"
+      ngModel
+      required
+      placeholder="Enter your designation">
+    </mat-form-field>
+
+      <br><br>
+    <button type="submit" mat-raised-button color="primary">Add User</button>
+
+  </form>
+</mat-card>
+
+
+
+<br><br>
+
+<mat-card>
+  <mat-toolbar>List</mat-toolbar>
+  <br><br>
+    <table class="table">
+      <tr>
+        <th>Sr.No</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact Number</th>
+        <th>Designation</th>
+      </tr>
+
+      <tr *ngFor="let user of users;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{user.uname}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.contact}}</td>
+        <td>{{user.designation}}</td>
+
+
+      </tr>
+
+    </table>
+</mat-card>
