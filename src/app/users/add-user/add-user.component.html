@@ -69,6 +69,7 @@
         <th>Email</th>
         <th>Contact Number</th>
         <th>Designation</th>
+        <th colspan="2">Tasks</th>
       </tr>
 
       <tr *ngFor="let user of users;let i=index">
@@ -77,6 +78,8 @@
         <td>{{user.email}}</td>
         <td>{{user.contact}}</td>
         <td>{{user.designation}}</td>
+        <td><mat-icon aria-hidden="false" aria-label="Example edit icon" (click)="onEditUser(i)">edit</mat-icon></td>
+        <td><mat-icon (click)="deleteUser(i)">delete</mat-icon></td>
 
 
       </tr>

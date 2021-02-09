@@ -29,6 +29,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { PostComponent } from './post/post/post.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 
@@ -65,8 +67,8 @@ import {MatTableModule} from '@angular/material/table';
     MatFormFieldModule,
     MatToolbarModule,
     ReactiveFormsModule,
-    MatTableModule
-
+    MatTableModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

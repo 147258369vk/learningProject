@@ -4,6 +4,7 @@ import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.compo
 import { TemplateDrivenFormComponent } from './forms/template-driven-form/template-driven-form.component';
 import { PostComponent } from './post/post/post.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path:'user',
     component:AddUserComponent
+  },
+  {
+    path:'edit-user',
+    component:EditUserComponent
   }
 ];
 

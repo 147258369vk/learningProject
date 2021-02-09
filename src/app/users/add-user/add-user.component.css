@@ -14,3 +14,11 @@ textarea
 table{
   width:100%
 }
+mat-icon
+{
+  cursor:pointer;
+}
+mat-icon:hover
+{
+  color:darkred;
+}
